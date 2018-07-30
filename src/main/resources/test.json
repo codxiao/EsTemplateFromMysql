@@ -1,0 +1,51 @@
+{
+"template": "testfc",
+"order":1,
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "my_analyzer": {
+          "tokenizer": "my_tokenizer"
+        }
+      },
+      "tokenizer": {
+        "my_tokenizer": {
+          "type": "ngram",
+          "min_gram": 1,
+          "max_gram": 2,
+          "token_chars": [
+            "letter",
+            "digit"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "doc": {
+      "properties": {
+        "emp_no": {
+          "type": "text",
+          "analyzer": "my_analyzer"
+          
+        },
+
+		"first_name": {
+          "type": "text",
+          "analyzer": "my_analyzer"
+        },
+		"last_name": {
+          "type": "text",
+          "analyzer": "my_analyzer"
+          
+        },
+		"gender": {
+          "type": "text"
+        }
+
+      }
+    }
+  }
+}
+
+
